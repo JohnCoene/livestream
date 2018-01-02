@@ -1,0 +1,13 @@
+Package: livestream
+Title: R wrapper for the Livestream API
+Version: 0.0.0.9000
+Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
+Description: R wrapper for the Livestream API.
+Depends: R (>= 3.4.2)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+  httr,
+  jsonlite
+RoxygenNote: 6.0.1
