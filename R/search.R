@@ -1,6 +1,6 @@
 #' Search livestream
 #'
-#' Search live stream
+#' Search Livestream events.
 #'
 #' @param q query string.
 #' @param from,to date range, optional.
@@ -38,13 +38,13 @@ live_search <- function(q, from = NULL, to = NULL, tags = NULL, account.id = NUL
     accountId = account.id
   )
 
-  uri <- httr::build_url(uri)
-
   if(!is.null(from))
     uri$query$from <- format(from, "%Y-%m-%dT%H:%M:%S%z", tz = "UTC")
 
   if(!is.null(to))
     uri$query$to <- format(to, "%Y-%m-%dT%H:%M:%S%z", tz = "UTC")
+
+  uri <- httr::build_url(uri) # build url
 
   # call API
   response <- call_api(uri, key)

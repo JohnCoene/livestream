@@ -28,7 +28,7 @@ Tags can be added for each Event inside Livestream.com. We recommend using tags 
 own custom categories or identifiers.
 }
 \description{
-Search live stream
+Search Livestream events.
 }
 \examples{
 \dontrun{
