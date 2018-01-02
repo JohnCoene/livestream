@@ -42,22 +42,6 @@ live_draft_events <- function(account.id = NULL, key = NULL, quiet = !interactiv
 
   get_events(account.id, key, quiet, "draft_events")
 
-  which <- which[1]
-
-  if(!which %in% c("past", "upcoming", "draft", "private")){
-    stop("wrong which parameter", call. = FALSE)
-  }
-
-  if(which == "past"){
-
-  } else if (which == "upcoming"){
-
-  } else if (which == "draft"){
-
-  } else {
-
-  }
-
 }
 
 #' @rdname events
