@@ -109,3 +109,9 @@ get_feed <- function(event.id, newer = NULL, older = NULL, offset.id = NULL, off
 
   parse_content(content$data)
 }
+
+img_embed <- function(x){
+  paste0(
+    "<a href='", x, "' target='_blank'><img style='max-height:50px;' src='", x, "' /></a>"
+  )
+}

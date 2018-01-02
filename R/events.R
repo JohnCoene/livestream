@@ -1,6 +1,6 @@
-#' Get past events
+#' Get events
 #'
-#' Get information on past events.
+#' Get information on events.
 #'
 #' @param account.id your account id, can be setup via \code{\link{live_setup}}.
 #' @param key your API key, optional, if passed overrides \code{\link{live_setup}}.
@@ -42,6 +42,22 @@ live_draft_events <- function(account.id = NULL, key = NULL, quiet = !interactiv
 
   get_events(account.id, key, quiet, "draft_events")
 
+  which <- which[1]
+
+  if(!which %in% c("past", "upcoming", "draft", "private")){
+    stop("wrong which parameter", call. = FALSE)
+  }
+
+  if(which == "past"){
+
+  } else if (which == "upcoming"){
+
+  } else if (which == "draft"){
+
+  } else {
+
+  }
+
 }
 
 #' @rdname events
@@ -67,4 +83,62 @@ live_event <- function(event.id, account.id = NULL, key = NULL){
 
   parse_content(content)
 
+}
+
+#' Events gadgets
+#'
+#' @inheritParams live_past_events
+#'
+#' @examples
+#' \dontrun{
+#' # setup account id
+#' # to remove need to pass in subsequent calls
+#' live_setup(
+#'   key = "Xxx0xX0X0x0X0x", # your API token
+#'   account.id = 1909571 # Forum id
+#' )
+#'
+#' live_events_gadget()
+#' }
+#'
+#' @export
+live_events_gadget <- function(account.id = NULL, key = NULL,
+                   which = c("past", "upcoming", "draft", "private")){
+
+  which <- which[1]
+
+  if(!which %in% c("past", "upcoming", "draft", "private"))
+    stop("wrong which parameter", call. = FALSE)
+
+  if(which == "past"){
+    data <- live_past_events(account.id = NULL, key = NULL)
+  } else if (which == "upcoming"){
+    data <- live_upcoming_events(account.id = NULL, key = NULL)
+  } else if (which == "draft"){
+    data <- live_draft_events(account.id = NULL, key = NULL)
+  } else {
+    data <- live_private_events(account.id = NULL, key = NULL)
+  }
+
+  ui <- miniUI::miniPage(
+    miniUI::gadgetTitleBar("Events"),
+    miniUI::miniContentPanel(
+      shiny::dataTableOutput("table")
+    )
+  )
+
+  server <- function(input, output){
+
+    dataTable <- reactive({
+      data <- data[, c("id", "fullName", "viewerCount", "logo.url")]
+      data$logo.url <- img_embed(data$logo.url)
+      data
+    })
+
+    output$table <- shiny::renderDataTable({
+      dataTable()
+    }, escape = FALSE)
+  }
+
+  shiny::runGadget(ui, server)
 }

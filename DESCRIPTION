@@ -9,5 +9,7 @@ Encoding: UTF-8
 LazyData: true
 Imports:
   httr,
-  jsonlite
+  jsonlite,
+  shiny,
+  miniUI
 RoxygenNote: 6.0.1

@@ -6,7 +6,7 @@
 \alias{live_draft_events}
 \alias{live_private_events}
 \alias{live_event}
-\title{Get past events}
+\title{Get events}
 \usage{
 live_past_events(account.id = NULL, key = NULL, quiet = !interactive())
 
@@ -29,7 +29,7 @@ live_event(event.id, account.id = NULL, key = NULL)
 \item{event.id}{optional, if passed here overrides \code{\link{live_setup}}.}
 }
 \description{
-Get information on past events.
+Get information on events.
 }
 \examples{
 \dontrun{
