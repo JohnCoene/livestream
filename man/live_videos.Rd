@@ -13,6 +13,10 @@ live_videos(event.id = NULL, newer = 0, older = 25, offset = NULL,
 \item{older, newer}{the number of posts to return older or newer than \code{offset}.
 The maximum value of these parameters is limited to \code{25}.}
 
+\item{offset}{offset id.}
+
+\item{account.id}{optional, if passed here overrides \code{\link{live_setup}}.}
+
 \item{key}{your API key, optional, if passed overrides \code{\link{live_setup}}.}
 }
 \description{
@@ -31,7 +35,7 @@ past_events <- live_past_events()
 
 # id of Annual Meeting of the Global Future Councils
 # (English)
-id <- past_events[grepl("\\\\(English\\\\) Annual Meeting of the Global Future Councils", past_events$fullName), "id"]
+id <- past_events[grepl("\\\\(English\\\\) Annual Meeting", past_events$fullName), "id"]
 videos <- live_videos(id)
 }
 

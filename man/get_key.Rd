@@ -9,3 +9,4 @@ get_key(key)
 \description{
 check passed key against setup
 }
+\keyword{internal}

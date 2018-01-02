@@ -3,6 +3,8 @@
 #' Get videos of particular event.
 #'
 #' @param event.id optional, if passed here overrides \code{\link{live_setup}}.
+#' @param account.id optional, if passed here overrides \code{\link{live_setup}}.
+#' @param offset offset id.
 #' @param older,newer the number of posts to return older or newer than \code{offset}.
 #'  The maximum value of these parameters is limited to \code{25}.
 #' @param key your API key, optional, if passed overrides \code{\link{live_setup}}.
@@ -20,7 +22,7 @@
 #'
 #' # id of Annual Meeting of the Global Future Councils
 #' # (English)
-#' id <- past_events[grepl("\\(English\\) Annual Meeting of the Global Future Councils", past_events$fullName), "id"]
+#' id <- past_events[grepl("\\(English\\) Annual Meeting", past_events$fullName), "id"]
 #' videos <- live_videos(id)
 #' }
 #'

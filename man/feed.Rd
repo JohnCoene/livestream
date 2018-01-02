@@ -29,6 +29,8 @@ If no value is passed, this endpoint will fetch older posts based on \code{older
 Valid values are \code{status}, \code{image} and \code{video}.
 This parameter is required if \code{offset.id} paramter is also present.}
 
+\item{account.id}{optional, if passed here overrides \code{\link{live_setup}}.}
+
 \item{key}{your API key, optional, if passed overrides \code{\link{live_setup}}.}
 
 \item{id}{id of object to retrieve.}

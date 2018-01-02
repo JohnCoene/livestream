@@ -9,3 +9,4 @@ get_eventid(id)
 \description{
 check passed key against setup
 }
+\keyword{internal}

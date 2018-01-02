@@ -88,6 +88,7 @@ live_event <- function(event.id, account.id = NULL, key = NULL){
 #' Events gadgets
 #'
 #' @inheritParams live_past_events
+#' @param which which events function to run.
 #'
 #' @examples
 #' \dontrun{
@@ -129,7 +130,7 @@ live_events_gadget <- function(account.id = NULL, key = NULL,
 
   server <- function(input, output){
 
-    dataTable <- reactive({
+    dataTable <- shiny::reactive({
       data <- data[, c("id", "fullName", "viewerCount", "logo.url")]
       data$logo.url <- img_embed(data$logo.url)
       data

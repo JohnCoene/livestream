@@ -11,6 +11,8 @@ live_events_gadget(account.id = NULL, key = NULL, which = c("past",
 \item{account.id}{your account id, can be setup via \code{\link{live_setup}}.}
 
 \item{key}{your API key, optional, if passed overrides \code{\link{live_setup}}.}
+
+\item{which}{which events function to run.}
 }
 \description{
 Events gadgets

@@ -9,3 +9,4 @@ get_accountid(id)
 \description{
 check passed key against setup
 }
+\keyword{internal}

@@ -9,3 +9,4 @@ call_api(uri, key)
 \description{
 call api
 }
+\keyword{internal}

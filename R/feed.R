@@ -4,6 +4,7 @@
 #'
 #' @param id id of object to retrieve.
 #' @param event.id optional, if passed here overrides \code{\link{live_setup}}.
+#' @param account.id optional, if passed here overrides \code{\link{live_setup}}.
 #' @param older,newer the number of posts to return older or newer than \code{offset}.
 #' The maximum value of these parameters is limited to \code{25}.
 #' @param offset.id the ID of the post returned in the previous call relative to which older or newer posts will be returned.

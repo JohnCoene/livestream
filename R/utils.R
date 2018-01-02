@@ -1,4 +1,5 @@
 #' check passed key against setup
+#' @keywords internal
 get_key <- function(key){
   if(is.null(getOption("livestream_api_key")) && is.null(key))
     stop("pass key or use live_setup", call. = FALSE)
@@ -11,6 +12,7 @@ get_key <- function(key){
 }
 
 #' check passed key against setup
+#' @keywords internal
 get_accountid <- function(id){
   if(is.null(getOption("livestream_account_id")) && is.null(id))
     stop("pass id or use live_setup", call. = FALSE)
@@ -23,6 +25,7 @@ get_accountid <- function(id){
 }
 
 #' check passed key against setup
+#' @keywords internal
 get_eventid <- function(id){
   if(is.null(getOption("livestream_event_id")) && is.null(id))
     stop("pass id or use live_setup", call. = FALSE)
@@ -35,6 +38,7 @@ get_eventid <- function(id){
 }
 
 #' call api
+#' @keywords internal
 call_api <- function(uri, key){
 
   key <- get_key(key)
@@ -43,11 +47,13 @@ call_api <- function(uri, key){
   httr::stop_for_status(req)
 }
 
+#' @keywords internal
 parse_content <- function(x){
   x <- jsonlite::toJSON(x, auto_unbox = T)
   jsonlite::fromJSON(x, flatten = TRUE)
 }
 
+#' @keywords internal
 get_events <- function(account.id = NULL, key = NULL, quiet = !interactive(), which = "past_events"){
   # build query
   uri <- paste0(getOption("livestream_base_url"), "accounts/", get_accountid(account.id), "/", which)
@@ -88,6 +94,7 @@ get_events <- function(account.id = NULL, key = NULL, quiet = !interactive(), wh
   parse_content(content)
 }
 
+#' @keywords internal
 get_feed <- function(event.id, newer = NULL, older = NULL, offset.id = NULL, offset.type = NULL,
                      account.id = NULL, key = NULL, which = "feed"){
   # build query
@@ -110,6 +117,7 @@ get_feed <- function(event.id, newer = NULL, older = NULL, offset.id = NULL, off
   parse_content(content$data)
 }
 
+#' @keywords internal
 img_embed <- function(x){
   paste0(
     "<a href='", x, "' target='_blank'><img style='max-height:50px;' src='", x, "' /></a>"
