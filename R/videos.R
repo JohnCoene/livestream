@@ -26,6 +26,8 @@
 #' videos <- live_videos(id)
 #' }
 #'
+#' @return a \code{list}, see \href{official documentation}{https://livestream.com/developers/docs/api/#video-object}.
+#'
 #' @export
 live_videos <- function(event.id = NULL, newer = 0, older = 25, offset = NULL, account.id = NULL, key = NULL){
 
@@ -46,6 +48,6 @@ live_videos <- function(event.id = NULL, newer = 0, older = 25, offset = NULL, a
   response <- call_api(uri, key)
   content <- httr::content(response)
 
-  parse_content(content$vods$data)
+  parse_content(content)
 
 }

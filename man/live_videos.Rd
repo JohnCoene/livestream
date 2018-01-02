@@ -19,6 +19,9 @@ The maximum value of these parameters is limited to \code{25}.}
 
 \item{key}{your API key, optional, if passed overrides \code{\link{live_setup}}.}
 }
+\value{
+a \code{list}, see \href{official documentation}{https://livestream.com/developers/docs/api/#video-object}.
+}
 \description{
 Get videos of particular event.
 }
