@@ -44,7 +44,7 @@ videos <- live_videos(sample(past_events$id, 1))
 feed <- live_feed(sample(past_events$id, 1))
 ```
 
-* `GET` calls
+\* `GET` calls
 
 --------------------------------------------
 
