@@ -54,7 +54,7 @@ live_private_events <- function(account.id = NULL, key = NULL, quiet = !interact
 
 #' @rdname events
 #' @export
-live_event <- function(event.id, account.id = NULL, key = NULL){
+live_event <- function(event.id = NULL, account.id = NULL, key = NULL){
 
   # build query
   uri <- paste0(getOption("livestream_base_url"), "accounts/", get_accountid(account.id), "/events/", get_eventid(event.id))

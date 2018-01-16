@@ -17,7 +17,7 @@ live_draft_events(account.id = NULL, key = NULL, quiet = !interactive())
 
 live_private_events(account.id = NULL, key = NULL, quiet = !interactive())
 
-live_event(event.id, account.id = NULL, key = NULL)
+live_event(event.id = NULL, account.id = NULL, key = NULL)
 }
 \arguments{
 \item{account.id}{your account id, can be setup via \code{\link{live_setup}}.}
