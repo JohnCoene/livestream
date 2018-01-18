@@ -33,7 +33,7 @@ live_account_id <- function(id, key = NULL){
     stop("must pass id", call. = FALSE)
 
   # build query
-  uri <- paste0(getOption("livestream_base_url"), "accounts/", id)
+  uri <- paste0(getOption("livestream_base_url"), "accounts/", get_accountid(id))
 
   # call api
   response <- call_api(uri, key)
