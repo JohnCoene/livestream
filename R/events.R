@@ -13,7 +13,7 @@
 #' # to remove need to pass in subsequent calls
 #' live_setup(
 #'   key = "Xxx0xX0X0x0X0x", # your API token
-#'   account.id = 1909571 # Forum id
+#'   account.id = "xxXXxxXXxx"
 #' )
 #'
 #' past_events <- live_past_events()
@@ -80,7 +80,7 @@ live_event <- function(event.id = NULL, account.id = NULL, key = NULL){
 #' # to remove need to pass in subsequent calls
 #' live_setup(
 #'   key = "Xxx0xX0X0x0X0x", # your API token
-#'   account.id = 1909571 # Forum id
+#'   account.id = 1909571
 #' )
 #'
 #' live_events_gadget()

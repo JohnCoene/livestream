@@ -21,7 +21,7 @@ Collect information about an account.
 \dontrun{
 live_setup(key = "Xxx0xX0X0x0X0x") # setup key
 
-account <- live_account()
+(account <- live_account())
 }
 
 }

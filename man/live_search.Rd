@@ -4,8 +4,8 @@
 \alias{live_search}
 \title{Search livestream}
 \usage{
-live_search(q, from = NULL, to = NULL, tags = NULL, account.id = NULL,
-  key = NULL, quiet = !interactive())
+live_search(q, from = NULL, to = NULL, tags = NULL,
+  account.id = NULL, key = NULL, quiet = !interactive())
 }
 \arguments{
 \item{q}{query string.}
@@ -34,7 +34,7 @@ Search Livestream events.
 \dontrun{
 live_setup(key = "Xxx0xX0X0x0X0x") # setup key
 
-results <- live_search(q = "Davos")
+results <- live_search(q = "R meetup")
 }
 
 }

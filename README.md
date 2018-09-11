@@ -2,13 +2,12 @@
 
 ![Livestream](https://upload.wikimedia.org/wikipedia/commons/5/53/Livestream_logo-rgb_standard.png)
 
-R Wrapper for [LiveStream API](https://livestream.com/developers/docs/api)*
+R Wrapper for [LiveStream API](https://livestream.com/developers/docs/api)*.
 
 ## Install
 
 ```r
-devtools::install_github("http://chlxintgitl01.weforum.local/JCOE/livestream",
-  credentials = git2r::cred_user_pass("username", "password"))
+devtools::install_github("JohnCoene/livestream")
 ```
 
 ## Usage
@@ -28,7 +27,7 @@ live_options() # retrieve options
 (account = live_account())
 
 # search
-results <- live_search("Davos")
+results <- live_search("useR meetup")
 
 # list past events
 past_events <- live_past_events()
@@ -46,6 +45,3 @@ feed <- live_feed(sample(past_events$id, 1))
 
 \* `GET` calls
 
---------------------------------------------
-
-Author & Maintainer: <Jean-Philippe.Coene@weforum.org>

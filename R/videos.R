@@ -15,14 +15,13 @@
 #' # to remove need to pass in subsequent calls
 #' live_setup(
 #'   key = "Xxx0xX0X0x0X0x", # your API token
-#'   account.id = 1909571 # Forum id
+#'   account.id = 123456
 #' )
 #'
 #' past_events <- live_past_events()
 #'
-#' # id of Annual Meeting of the Global Future Councils
-#' # (English)
-#' id <- past_events[grepl("\\(English\\) Annual Meeting", past_events$fullName), "id"]
+#' # random event
+#' id <- past_events[sample(nrow(past_events), 1), "id"]
 #' videos <- live_videos(id)
 #' }
 #'

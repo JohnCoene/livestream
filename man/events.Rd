@@ -8,14 +8,17 @@
 \alias{live_event}
 \title{Get events}
 \usage{
-live_past_events(account.id = NULL, key = NULL, quiet = !interactive())
+live_past_events(account.id = NULL, key = NULL,
+  quiet = !interactive())
 
 live_upcoming_events(account.id = NULL, key = NULL,
   quiet = !interactive())
 
-live_draft_events(account.id = NULL, key = NULL, quiet = !interactive())
+live_draft_events(account.id = NULL, key = NULL,
+  quiet = !interactive())
 
-live_private_events(account.id = NULL, key = NULL, quiet = !interactive())
+live_private_events(account.id = NULL, key = NULL,
+  quiet = !interactive())
 
 live_event(event.id = NULL, account.id = NULL, key = NULL)
 }
@@ -37,7 +40,7 @@ Get information on events.
 # to remove need to pass in subsequent calls
 live_setup(
   key = "Xxx0xX0X0x0X0x", # your API token
-  account.id = 1909571 # Forum id
+  account.id = "xxXXxxXXxx"
 )
 
 past_events <- live_past_events()

@@ -44,8 +44,8 @@ Get feed items.
 # to remove need to pass in subsequent calls
 live_setup(
   key = "Xxx0xX0X0x0X0x", # your API token
-  account.id = 1909571 # Forum id
-  event.id = 7901864 # event id
+  account.id = 1234567
+  event.id = 1234567
 )
 
 feed <- live_feed()

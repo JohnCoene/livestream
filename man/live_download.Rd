@@ -4,7 +4,8 @@
 \alias{live_download}
 \title{Get videos}
 \usage{
-live_download(video.id, event.id = NULL, account.id = NULL, key = NULL)
+live_download(video.id, event.id = NULL, account.id = NULL,
+  key = NULL)
 }
 \arguments{
 \item{video.id}{id of video to download.}
@@ -28,14 +29,13 @@ Get videos of particular event.
 # to remove need to pass in subsequent calls
 live_setup(
   key = "Xxx0xX0X0x0X0x", # your API token
-  account.id = 1909571 # Forum id
+  account.id = 1234567
 )
 
 past_events <- live_past_events()
 
-# id of Annual Meeting of the Global Future Councils
-# (English)
-id <- past_events[grepl("\\\\(English\\\\) Annual Meeting", past_events$fullName), "id"]
+# random event
+id <- past_events[sample(nrow(past_events), 1), "id"]
 videos <- live_videos(id)
 
 # get download url of random video
